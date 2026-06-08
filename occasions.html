@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW.nl | BMW Occasions</title>
+  <meta name="description" content="Vind uw perfecte gebruikte BMW met BMW Premium Selection garantie. Bekijk het aanbod van BMW occasions.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo-white.svg" type="image/svg+xml">
+  <style>
+    /* Occasions page styles */
+    .occasions-hero {
+      background: #111;
+      color: #fff;
+      padding: 140px 24px 60px;
+      text-align: center;
+    }
+    .occasions-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .occasions-hero p {
+      font-size: 1.15rem;
+      color: #aaa;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Search bar */
+    .occasion-search {
+      max-width: 640px;
+      margin: 36px auto 0;
+      display: flex;
+      gap: 0;
+    }
+    .occasion-search input {
+      flex: 1;
+      padding: 14px 20px;
+      font-size: 1rem;
+      border: 2px solid #333;
+      border-right: none;
+      border-radius: 6px 0 0 6px;
+      background: #1a1a1a;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .occasion-search input::placeholder { color: #666; }
+    .occasion-search input:focus { border-color: #1c69d4; }
+    .occasion-search button {
+      padding: 14px 28px;
+      background: #1c69d4;
+      color: #fff;
+      border: none;
+      border-radius: 0 6px 6px 0;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .occasion-search button:hover { background: #1554a8; }
+
+    /* Occasion cards grid */
+    .occasions-grid-section {
+      padding: 60px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .occasions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .occasion-card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+    .occasion-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+    .occasion-card-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      background: #222;
+    }
+    .occasion-card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .occasion-card-model {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .occasion-card-details {
+      font-size: 0.85rem;
+      color: #999;
+      margin-bottom: 4px;
+    }
+    .occasion-card-price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1c69d4;
+      margin: 12px 0;
+    }
+    .occasion-card-link {
+      margin-top: auto;
+      display: inline-block;
+      color: #1c69d4;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .occasion-card-link:hover { color: #fff; }
+
+    /* Benefits section */
+    .occasion-benefits {
+      background: #0d0d0d;
+      padding: 80px 24px;
+    }
+    .occasion-benefits-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .occasion-benefits h2 {
+      font-size: 2rem;
+      margin-bottom: 48px;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+    }
+    .benefit-item {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 32px 20px;
+      text-align: center;
+    }
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      background: #1c69d4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .benefit-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: #fff;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .benefit-item h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .benefit-item p {
+      font-size: 0.9rem;
+      color: #999;
+      line-height: 1.5;
+    }
+
+    /* CTA section */
+    .occasion-cta {
+      background: #111;
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .occasion-cta h2 {
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+    }
+    .occasion-cta .btn-primary {
+      display: inline-block;
+      padding: 14px 36px;
+      background: #1c69d4;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .occasion-cta .btn-primary:hover { background: #1554a8; }
+
+    @media (max-width: 600px) {
+      .occasions-hero h1 { font-size: 2rem; }
+      .occasion-search { flex-direction: column; }
+      .occasion-search input { border-right: 2px solid #333; border-radius: 6px; }
+      .occasion-search button { border-radius: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav-wrapper" role="navigation" aria-label="Hoofdnavigatie">
+    <div class="nav-main">
+      <a href="index.html" class="nav-logo" aria-label="BMW.nl Home">
+        <img src="images/logo-white.svg" alt="BMW" class="logo-white">
+        <img src="images/logo-grey.svg" alt="BMW" class="logo-dark">
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown-container" style="position:relative;">
+          <a href="models.html" class="nav-dropdown-trigger">Modellen & Configurator</a>
+        </div>
+        <a href="#">Exclusief aanbod</a>
+        <div class="nav-dropdown-container" style="position:relative;">
+          <a href="electric.html" class="nav-dropdown-trigger">Elektrisch</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-section">
+              <h3>Elektrische modellen</h3>
+              <a href="electric.html">BMW iX</a>
+              <a href="electric.html">BMW i4</a>
+              <a href="electric.html">BMW i5</a>
+              <a href="electric.html">BMW i7</a>
+              <a href="electric.html">BMW iX1</a>
+              <a href="electric.html">BMW iX2</a>
+              <a href="electric.html">BMW iX3</a>
+            </div>
+            <div class="nav-dropdown-section">
+              <h3>Meer over elektrisch</h3>
+              <a href="electric.html">Opladen</a>
+              <a href="electric.html">Actieradius</a>
+              <a href="electric.html">Belastingvoordeel</a>
+              <a href="electric.html">Plug-in Hybrides</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown-container" style="position:relative;">
+          <a href="lease.html" class="nav-dropdown-trigger">Aanschaf & lease</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-section">
+              <h3>Financiering</h3>
+              <a href="lease.html">Private Lease</a>
+              <a href="lease.html">Financial Lease</a>
+              <a href="lease.html">Operational Lease</a>
+              <a href="lease.html">BMW Financial Services</a>
+            </div>
+            <div class="nav-dropdown-section">
+              <h3>Aanschaf</h3>
+              <a href="configurator.html">Zelf samenstellen</a>
+              <a href="models.html">Direct beschikbaar</a>
+              <a href="occasions.html">BMW Occasions</a>
+              <a href="test-drive.html">Proefrit plannen</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown-container" style="position:relative;">
+          <a href="services.html" class="nav-dropdown-trigger">Meer BMW</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-section">
+              <h3>BMW Services</h3>
+              <a href="services.html">Werkplaats</a>
+              <a href="services.html">Onderhoud</a>
+              <a href="services.html">BMW Garantie</a>
+              <a href="services.html">BMW ConnectedDrive</a>
+            </div>
+            <div class="nav-dropdown-section">
+              <h3>Over BMW</h3>
+              <a href="#">BMW Groep</a>
+              <a href="#">Carrières</a>
+              <a href="#">Pers</a>
+              <a href="#">BMW M</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-icons">
+        <a href="#" class="nav-icon-btn" aria-label="My BMW">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+        <a href="#" class="nav-icon-btn" aria-label="Winkelwagen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </a>
+        <a href="#" class="nav-icon-btn" aria-label="Favorieten">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </a>
+        <a href="dealer.html" class="nav-icon-btn" aria-label="Selecteer dealer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+        </a>
+        <button class="hamburger" aria-label="Menu openen" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" role="navigation" aria-label="Mobiel menu">
+    <a href="models.html">Modellen & Configurator</a>
+    <a href="#">Exclusief aanbod</a>
+    <a href="electric.html">Elektrisch</a>
+    <a href="lease.html">Aanschaf & lease</a>
+    <a href="services.html">Meer BMW</a>
+    <a href="dealer.html">Vind uw dealer</a>
+    <a href="#">My BMW</a>
+  </div>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="occasions-hero">
+    <h1>BMW Occasions.</h1>
+    <p>Vind uw perfecte gebruikte BMW met BMW Premium Selection garantie.</p>
+
+    <!-- Search Bar -->
+    <form class="occasion-search" onsubmit="return false;">
+      <input type="text" placeholder="Zoek op model, type of kenmerk" aria-label="Zoek occasions">
+      <button type="submit">Zoeken</button>
+    </form>
+  </section>
+
+  <!-- ========== FEATURED OCCASIONS ========== -->
+  <section class="occasions-grid-section animate-on-scroll">
+    <div class="occasions-grid">
+
+      <a href="https://occasions.bmw.nl/bmw/zoeken" class="occasion-card">
+        <img src="images/ix-xdrive60.webp" alt="BMW iX xDrive60" class="occasion-card-img">
+        <div class="occasion-card-body">
+          <div class="occasion-card-model">BMW iX xDrive60</div>
+          <div class="occasion-card-details">2023 · 18.500 km · Elektrisch</div>
+          <div class="occasion-card-price">€ 79.900</div>
+          <span class="occasion-card-link">Bekijk details &#8594;</span>
+        </div>
+      </a>
+
+      <a href="https://occasions.bmw.nl/bmw/zoeken" class="occasion-card">
+        <img src="images/i5-edrive40.webp" alt="BMW i5 eDrive40" class="occasion-card-img">
+        <div class="occasion-card-body">
+          <div class="occasion-card-model">BMW i5 eDrive40</div>
+          <div class="occasion-card-details">2024 · 12.200 km · Elektrisch</div>
+          <div class="occasion-card-price">€ 62.500</div>
+          <span class="occasion-card-link">Bekijk details &#8594;</span>
+        </div>
+      </a>
+
+      <a href="https://occasions.bmw.nl/bmw/zoeken" class="occasion-card">
+        <img src="images/ix3-50-xdrive.webp" alt="BMW iX3 50 xDrive" class="occasion-card-img">
+        <div class="occasion-card-body">
+          <div class="occasion-card-model">BMW iX3 50 xDrive</div>
+          <div class="occasion-card-details">2023 · 22.800 km · Elektrisch</div>
+          <div class="occasion-card-price">€ 54.750</div>
+          <span class="occasion-card-link">Bekijk details &#8594;</span>
+        </div>
+      </a>
+
+      <a href="https://occasions.bmw.nl/bmw/zoeken" class="occasion-card">
+        <img src="images/i4-edrive35.webp" alt="BMW i4 eDrive35" class="occasion-card-img">
+        <div class="occasion-card-body">
+          <div class="occasion-card-model">BMW i4 eDrive35</div>
+          <div class="occasion-card-details">2023 · 15.600 km · Elektrisch</div>
+          <div class="occasion-card-price">€ 47.900</div>
+          <span class="occasion-card-link">Bekijk details &#8594;</span>
+        </div>
+      </a>
+
+      <a href="https://occasions.bmw.nl/bmw/zoeken" class="occasion-card">
+        <img src="images/x5-xdrive50e.webp" alt="BMW X5 xDrive50e" class="occasion-card-img">
+        <div class="occasion-card-body">
+          <div class="occasion-card-model">BMW X5 xDrive50e</div>
+          <div class="occasion-card-details">2022 · 34.200 km · Plug-in Hybride</div>
+          <div class="occasion-card-price">€ 72.300</div>
+          <span class="occasion-card-link">Bekijk details &#8594;</span>
+        </div>
+      </a>
+
+      <a href="https://occasions.bmw.nl/bmw/zoeken" class="occasion-card">
+        <img src="images/120.webp" alt="BMW 120" class="occasion-card-img">
+        <div class="occasion-card-body">
+          <div class="occasion-card-model">BMW 120</div>
+          <div class="occasion-card-details">2023 · 21.400 km · Benzine</div>
+          <div class="occasion-card-price">€ 33.500</div>
+          <span class="occasion-card-link">Bekijk details &#8594;</span>
+        </div>
+      </a>
+
+      <a href="https://occasions.bmw.nl/bmw/zoeken" class="occasion-card">
+        <img src="images/i7-edrive50.webp" alt="BMW i7 eDrive50" class="occasion-card-img">
+        <div class="occasion-card-body">
+          <div class="occasion-card-model">BMW i7 eDrive50</div>
+          <div class="occasion-card-details">2024 · 9.800 km · Elektrisch</div>
+          <div class="occasion-card-price">€ 109.900</div>
+          <span class="occasion-card-link">Bekijk details &#8594;</span>
+        </div>
+      </a>
+
+      <a href="https://occasions.bmw.nl/bmw/zoeken" class="occasion-card">
+        <img src="images/ix1-xdrive30.webp" alt="BMW iX1 xDrive30" class="occasion-card-img">
+        <div class="occasion-card-body">
+          <div class="occasion-card-model">BMW iX1 xDrive30</div>
+          <div class="occasion-card-details">2023 · 19.700 km · Elektrisch</div>
+          <div class="occasion-card-price">€ 44.950</div>
+          <span class="occasion-card-link">Bekijk details &#8594;</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ========== BENEFITS SECTION ========== -->
+  <section class="occasion-benefits animate-on-scroll">
+    <div class="occasion-benefits-inner">
+      <h2>Waarom een BMW Occasion?</h2>
+      <div class="benefits-grid">
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>BMW Premium Selection garantie</h3>
+          <p>Uitgebreide fabrieksgarantie op al onze occasions voor maximale zekerheid.</p>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3>Uitgebreide inspectie</h3>
+          <p>Elke occasion ondergaat een grondige controle van meer dan 100 punten.</p>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <h3>Financieringsmogelijkheden</h3>
+          <p>Flexibele financieringsopties die passen bij uw budget en wensen.</p>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          <h3>Inruilvoorstel</h3>
+          <p>Wij bieden een eerlijke inruilprijs voor uw huidige auto.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA SECTION ========== -->
+  <section class="occasion-cta animate-on-scroll">
+    <h2>Klaar om uw BMW te vinden?</h2>
+    <a href="https://occasions.bmw.nl/bmw/zoeken" class="btn-primary" target="_blank" rel="noopener">Bekijk alle occasions &#8594;</a>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <!-- My BMW App Banner -->
+      <div class="footer-app-banner animate-on-scroll">
+        <div>
+          <h3>My BMW App</h3>
+          <p>Altijd verbonden met uw BMW. Download de app en beheer uw auto vanuit uw broekzak.</p>
+        </div>
+        <a href="#" class="btn btn-primary btn-sm">Download de app <span class="arrow">&#8594;</span></a>
+      </div>
+
+      <!-- Footer Columns -->
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>Contact & informatie</h3>
+          <a href="#">Contact opnemen</a>
+          <a href="#">BMW nieuwsbrief</a>
+          <a href="#">BMW Brochure aanvragen</a>
+          <a href="#">Pers</a>
+          <a href="#">BMW Group</a>
+        </div>
+        <div class="footer-column">
+          <h3>Ervaar BMW</h3>
+          <a href="test-drive.html">Proefrit aanvragen</a>
+          <a href="#">BMW Driving Experience</a>
+          <a href="#">BMW Welt</a>
+          <a href="#">BMW Museum</a>
+          <a href="#">BMW Golf</a>
+        </div>
+        <div class="footer-column">
+          <h3>Hulp & diensten</h3>
+          <a href="services.html">BMW Service</a>
+          <a href="#">BMW Assistance</a>
+          <a href="#">BMW Garantie</a>
+          <a href="#">BMW ConnectedDrive</a>
+          <a href="#">BMW Software Update</a>
+        </div>
+        <div class="footer-column">
+          <h3>Kiezen & Aanschaffen</h3>
+          <a href="configurator.html">BMW Configurator</a>
+          <a href="models.html">Direct leverbaar</a>
+          <a href="occasions.html">BMW Occasions</a>
+          <a href="lease.html">BMW Financial Services</a>
+          <a href="#">BMW Accessoires</a>
+        </div>
+        <div class="footer-column">
+          <h3>Modellen</h3>
+          <a href="models.html">Alle modellen</a>
+          <a href="#">BMW 1 Serie</a>
+          <a href="#">BMW 3 Serie</a>
+          <a href="#">BMW 5 Serie</a>
+          <a href="#">BMW X modellen</a>
+          <a href="#">BMW M modellen</a>
+        </div>
+        <div class="footer-column">
+          <h3>Elektrische BMW's</h3>
+          <a href="electric.html">Alle elektrische modellen</a>
+          <a href="electric.html">BMW iX</a>
+          <a href="electric.html">BMW i4</a>
+          <a href="electric.html">BMW i5</a>
+          <a href="electric.html">BMW iX3</a>
+          <a href="electric.html">Opladen</a>
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><img src="images/social-facebook.png" alt="Facebook"></a>
+        <a href="#" aria-label="Instagram"><img src="images/social-instagram.png" alt="Instagram"></a>
+        <a href="#" aria-label="YouTube"><img src="images/social-youtube.png" alt="YouTube"></a>
+        <a href="#" aria-label="LinkedIn"><img src="images/social-linkedin.png" alt="LinkedIn"></a>
+      </div>
+
+      <!-- Legal Links -->
+      <div class="footer-legal">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Cookiebeleid</a>
+        <a href="#">Cookie-instellingen</a>
+        <a href="#">Juridische kennisgeving</a>
+        <a href="#">Voorwaarden</a>
+        <a href="#">Sitemap</a>
+        <p class="footer-copyright">&copy; 2024 BMW AG. Alle rechten voorbehouden.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========== COOKIE BANNER ========== -->
+  <div class="cookie-banner" role="dialog" aria-label="Cookie melding">
+    <div>
+      <h2>Wij gebruiken cookies</h2>
+      <p>BMW.nl maakt gebruik van cookies om de website te verbeteren en u de beste ervaring te bieden. Door verder te gaan, gaat u akkoord met ons cookiebeleid.</p>
+    </div>
+    <div class="cookie-banner-buttons">
+      <button class="btn btn-dark btn-sm cookie-customize">Aanpassen</button>
+      <button class="btn btn-dark btn-sm cookie-reject">Weigeren</button>
+      <button class="btn btn-primary btn-sm cookie-accept">Akkoord</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
