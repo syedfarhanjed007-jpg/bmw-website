@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW.nl | Vind uw BMW dealer</title>
+  <meta name="description" content="Zoek een BMW dealer bij u in de buurt. Vind uw dichtstbijzijnde BMW dealer voor verkoop, service en onderdelen.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo-white.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav-wrapper" role="navigation" aria-label="Hoofdnavigatie">
+    <div class="nav-main">
+      <a href="index.html" class="nav-logo" aria-label="BMW.nl Home">
+        <img src="images/logo-white.svg" alt="BMW" class="logo-white">
+        <img src="images/logo-grey.svg" alt="BMW" class="logo-dark">
+      </a>
+      <div class="nav-links">
+        <div class="nav-dropdown-container" style="position:relative;">
+          <a href="models.html" class="nav-dropdown-trigger">Modellen & Configurator</a>
+        </div>
+        <a href="#">Exclusief aanbod</a>
+        <div class="nav-dropdown-container" style="position:relative;">
+          <a href="electric.html" class="nav-dropdown-trigger">Elektrisch</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-section">
+              <h3>Elektrische modellen</h3>
+              <a href="electric.html">BMW iX</a>
+              <a href="electric.html">BMW i4</a>
+              <a href="electric.html">BMW i5</a>
+              <a href="electric.html">BMW i7</a>
+              <a href="electric.html">BMW iX1</a>
+              <a href="electric.html">BMW iX2</a>
+              <a href="electric.html">BMW iX3</a>
+            </div>
+            <div class="nav-dropdown-section">
+              <h3>Meer over elektrisch</h3>
+              <a href="electric.html">Opladen</a>
+              <a href="electric.html">Actieradius</a>
+              <a href="electric.html">Belastingvoordeel</a>
+              <a href="electric.html">Plug-in Hybrides</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown-container" style="position:relative;">
+          <a href="lease.html" class="nav-dropdown-trigger">Aanschaf & lease</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-section">
+              <h3>Financiering</h3>
+              <a href="lease.html">Private Lease</a>
+              <a href="lease.html">Financial Lease</a>
+              <a href="lease.html">Operational Lease</a>
+              <a href="lease.html">BMW Financial Services</a>
+            </div>
+            <div class="nav-dropdown-section">
+              <h3>Aanschaf</h3>
+              <a href="configurator.html">Zelf samenstellen</a>
+              <a href="models.html">Direct beschikbaar</a>
+              <a href="occasions.html">BMW Occasions</a>
+              <a href="test-drive.html">Proefrit plannen</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-dropdown-container" style="position:relative;">
+          <a href="services.html" class="nav-dropdown-trigger">Meer BMW</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown-section">
+              <h3>BMW Services</h3>
+              <a href="services.html">Werkplaats</a>
+              <a href="services.html">Onderhoud</a>
+              <a href="services.html">BMW Garantie</a>
+              <a href="services.html">BMW ConnectedDrive</a>
+            </div>
+            <div class="nav-dropdown-section">
+              <h3>Over BMW</h3>
+              <a href="#">BMW Groep</a>
+              <a href="#">Carrières</a>
+              <a href="#">Pers</a>
+              <a href="#">BMW M</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-icons">
+        <a href="#" class="nav-icon-btn" aria-label="My BMW">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </a>
+        <a href="#" class="nav-icon-btn" aria-label="Winkelwagen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </a>
+        <a href="#" class="nav-icon-btn" aria-label="Favorieten">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </a>
+        <a href="dealer.html" class="nav-icon-btn" aria-label="Selecteer dealer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </a>
+        <button class="hamburger" aria-label="Menu openen" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" role="navigation" aria-label="Mobiel menu">
+    <a href="models.html">Modellen & Configurator</a>
+    <a href="#">Exclusief aanbod</a>
+    <a href="electric.html">Elektrisch</a>
+    <a href="lease.html">Aanschaf & lease</a>
+    <a href="services.html">Meer BMW</a>
+    <a href="dealer.html">Vind uw dealer</a>
+    <a href="#">My BMW</a>
+  </div>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header animate-on-scroll">
+    <div class="container">
+      <h1>Vind uw BMW dealer.</h1>
+      <p>Zoek een BMW dealer bij u in de buurt.</p>
+    </div>
+  </section>
+
+  <!-- ========== SEARCH SECTION ========== -->
+  <section class="container animate-on-scroll" style="padding-top: 48px; padding-bottom: 48px;">
+    <div class="dealer-search">
+      <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+        <input type="text" class="form-input" placeholder="Postcode of plaats" style="flex: 1;">
+        <button class="btn btn-primary">Zoeken</button>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <button class="btn btn-secondary" style="font-size: 13px; padding: 8px 16px;">Dealer</button>
+        <button class="btn btn-secondary" style="font-size: 13px; padding: 8px 16px;">Service</button>
+        <button class="btn btn-secondary" style="font-size: 13px; padding: 8px 16px;">Parts</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEALER RESULTS ========== -->
+  <section class="container animate-on-scroll" style="padding-bottom: 48px;">
+    <div class="dealer-results" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+
+      <div class="dealer-card">
+        <h4>BMW Amsterdam</h4>
+        <p>Keizersgracht 123, Amsterdam</p>
+        <p>Tel: 020-1234567</p>
+        <p>Ma-Vr: 09:00 - 18:00 | Za: 10:00 - 17:00</p>
+        <a href="#" class="btn btn-secondary" style="margin-top: 12px; font-size: 13px;">Neem contact op</a>
+      </div>
+
+      <div class="dealer-card">
+        <h4>BMW Rotterdam</h4>
+        <p>Coolsingel 45, Rotterdam</p>
+        <p>Tel: 010-2345678</p>
+        <p>Ma-Vr: 09:00 - 18:00 | Za: 10:00 - 17:00</p>
+        <a href="#" class="btn btn-secondary" style="margin-top: 12px; font-size: 13px;">Neem contact op</a>
+      </div>
+
+      <div class="dealer-card">
+        <h4>BMW Den Haag</h4>
+        <p>Lange Poten 10, Den Haag</p>
+        <p>Tel: 070-3456789</p>
+        <p>Ma-Vr: 09:00 - 18:00 | Za: 10:00 - 17:00</p>
+        <a href="#" class="btn btn-secondary" style="margin-top: 12px; font-size: 13px;">Neem contact op</a>
+      </div>
+
+      <div class="dealer-card">
+        <h4>BMW Utrecht</h4>
+        <p>Oudegracht 55, Utrecht</p>
+        <p>Tel: 030-4567890</p>
+        <p>Ma-Vr: 09:00 - 18:00 | Za: 10:00 - 17:00</p>
+        <a href="#" class="btn btn-secondary" style="margin-top: 12px; font-size: 13px;">Neem contact op</a>
+      </div>
+
+      <div class="dealer-card">
+        <h4>BMW Eindhoven</h4>
+        <p>Markt 8, Eindhoven</p>
+        <p>Tel: 040-5678901</p>
+        <p>Ma-Vr: 09:00 - 18:00 | Za: 10:00 - 17:00</p>
+        <a href="#" class="btn btn-secondary" style="margin-top: 12px; font-size: 13px;">Neem contact op</a>
+      </div>
+
+      <div class="dealer-card">
+        <h4>BMW Groningen</h4>
+        <p>Grote Markt 15, Groningen</p>
+        <p>Tel: 050-6789012</p>
+        <p>Ma-Vr: 09:00 - 18:00 | Za: 10:00 - 17:00</p>
+        <a href="#" class="btn btn-secondary" style="margin-top: 12px; font-size: 13px;">Neem contact op</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== MAP PLACEHOLDER ========== -->
+  <section class="animate-on-scroll" style="padding: 0 var(--container-padding) 48px; max-width: var(--container-max); margin: 0 auto;">
+    <div style="background: #e8e8e8; height: 400px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 18px;">
+      <div style="text-align: center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 48px; height: 48px; margin-bottom: 12px;">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <p>Interactieve kaart wordt geladen…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES INFO ========== -->
+  <section class="split-section animate-on-scroll">
+    <div class="split-image">
+      <img src="images/services-suv.jpg" alt="BMW Dealer Services">
+    </div>
+    <div class="split-content">
+      <h2>Wat kunt u bij uw BMW dealer verwachten?</h2>
+      <p>Onze erkende BMW dealers bieden u een compleet pakket aan diensten. Van de nieuwste modellen in de showroom tot professioneel onderhoud en reparatie door gecertificeerde BMW technici. Bezoek uw dichtstbijzijnde dealer voor een proefrit, advies op maat of een werkplaatsafspraak.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="test-drive.html" class="btn btn-primary">Plan een proefrit</a>
+        <a href="services.html" class="btn btn-secondary">BMW Service <span class="arrow">&#8594;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-app-banner animate-on-scroll">
+        <div>
+          <h3>My BMW App</h3>
+          <p>Altijd verbonden met uw BMW. Download de app en beheer uw auto vanuit uw broekzak.</p>
+        </div>
+        <a href="#" class="btn btn-primary btn-sm">Download de app <span class="arrow">&#8594;</span></a>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>Contact & informatie</h3>
+          <a href="#">Contact opnemen</a>
+          <a href="#">BMW nieuwsbrief</a>
+          <a href="#">BMW Brochure aanvragen</a>
+          <a href="#">Pers</a>
+          <a href="#">BMW Group</a>
+        </div>
+        <div class="footer-column">
+          <h3>Ervaar BMW</h3>
+          <a href="test-drive.html">Proefrit aanvragen</a>
+          <a href="#">BMW Driving Experience</a>
+          <a href="#">BMW Welt</a>
+          <a href="#">BMW Museum</a>
+          <a href="#">BMW Golf</a>
+        </div>
+        <div class="footer-column">
+          <h3>Hulp & diensten</h3>
+          <a href="services.html">BMW Service</a>
+          <a href="#">BMW Assistance</a>
+          <a href="#">BMW Garantie</a>
+          <a href="#">BMW ConnectedDrive</a>
+          <a href="#">BMW Software Update</a>
+        </div>
+        <div class="footer-column">
+          <h3>Kiezen & Aanschaffen</h3>
+          <a href="configurator.html">BMW Configurator</a>
+          <a href="models.html">Direct leverbaar</a>
+          <a href="occasions.html">BMW Occasions</a>
+          <a href="lease.html">BMW Financial Services</a>
+          <a href="#">BMW Accessoires</a>
+        </div>
+        <div class="footer-column">
+          <h3>Modellen</h3>
+          <a href="models.html">Alle modellen</a>
+          <a href="#">BMW 1 Serie</a>
+          <a href="#">BMW 3 Serie</a>
+          <a href="#">BMW 5 Serie</a>
+          <a href="#">BMW X modellen</a>
+          <a href="#">BMW M modellen</a>
+        </div>
+        <div class="footer-column">
+          <h3>Elektrische BMW's</h3>
+          <a href="electric.html">Alle elektrische modellen</a>
+          <a href="electric.html">BMW iX</a>
+          <a href="electric.html">BMW i4</a>
+          <a href="electric.html">BMW i5</a>
+          <a href="electric.html">BMW iX3</a>
+          <a href="electric.html">Opladen</a>
+        </div>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><img src="images/social-facebook.png" alt="Facebook"></a>
+        <a href="#" aria-label="Instagram"><img src="images/social-instagram.png" alt="Instagram"></a>
+        <a href="#" aria-label="YouTube"><img src="images/social-youtube.png" alt="YouTube"></a>
+        <a href="#" aria-label="LinkedIn"><img src="images/social-linkedin.png" alt="LinkedIn"></a>
+      </div>
+      <div class="footer-legal">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Cookiebeleid</a>
+        <a href="#">Cookie-instellingen</a>
+        <a href="#">Juridische kennisgeving</a>
+        <a href="#">Voorwaarden</a>
+        <a href="#">Sitemap</a>
+        <p class="footer-copyright">&copy; 2024 BMW AG. Alle rechten voorbehouden.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== COOKIE BANNER ========== -->
+  <div class="cookie-banner" role="dialog" aria-label="Cookie melding">
+    <div>
+      <h2>Wij gebruiken cookies</h2>
+      <p>BMW.nl maakt gebruik van cookies om de website te verbeteren en u de beste ervaring te bieden. Door verder te gaan, gaat u akkoord met ons cookiebeleid.</p>
+    </div>
+    <div class="cookie-banner-buttons">
+      <button class="btn btn-dark btn-sm cookie-customize">Aanpassen</button>
+      <button class="btn btn-dark btn-sm cookie-reject">Weigeren</button>
+      <button class="btn btn-primary btn-sm cookie-accept">Akkoord</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
